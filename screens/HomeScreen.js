@@ -62,8 +62,8 @@ export default function HomeScreen() {
                                     borderBottomColor: "gray",
                                     padding: 20,
                                 }}>
-                                <MapPinIcon size={20} color="gray" />
-                                <Text style={{ color: 'black', fontSize: 16, marginLeft: 2 }}>London, United Kingdom</Text>
+                                    <MapPinIcon size={20} color="gray" />
+                                    <Text style={{ color: 'black', fontSize: 16, marginLeft: 2 }}>London, United Kingdom</Text>
                                 </TouchableOpacity>
 
                             ))}
@@ -73,51 +73,51 @@ export default function HomeScreen() {
                 </View>
                 {/* forecast section */}                
                 <View 
-                style={{
-                    display: "flex",
-                    justifyContent: "space-around",
-                    flex: 1,
-                    marginBottom: 10,
-                }}>
-                {/* location */}
-                <Text 
-                style={{
-                    fontSize: 24,
-                    textAlign: "center",
-                    color: "white",
-                    fontWeight: "bold",
-                }}>London,
-                    <Text
                     style={{
-                        fontSize: 18,
-                        fontWeight: "500",
-                        color: "#cccc"
+                        display: "flex",
+                        justifyContent: "space-around",
+                        flex: 1,
+                        marginBottom: 10,
                     }}>
+{/* location */}
+                    <Text 
+                    style={{
+                        fontSize: 24,
+                        textAlign: "center",
+                        color: "white",
+                        fontWeight: "bold",
+                    }}> London,
+                        <Text
+                        style={{
+                            fontSize: 18,
+                            fontWeight: "500",
+                            color: "#cccc"
+                        }}>
                         United Kingdom
+                        </Text>
                     </Text>
-                </Text>
                 {/* weather image */}
                 <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "center",
-                }}>
-                    <Image 
-                    source={require('../assets/image/partlycloudy.png')}
                     style={{
-                        width: 250,
-                        height: 250,
-                    }}/>
+                        flexDirection: "row",
+                        justifyContent: "center",
+                    }}>
+                        <Image 
+                        source={require('../assets/image/partlycloudy.png')}
+                        style={{
+                            width: 250,
+                            height: 250,
+                        }}/>
                 </View>
-                    <View style={{ flexDirection: 'column', marginVertical: 2 }}>
-                        <Text style={{textAlign: "center", fontWeight: "bold", color: "white", fontSize: 60, marginLeft: 15,}}>
-                            23&#176;
-                        </Text>
-                        <Text style={{textAlign: "center", fontWeight: "bold", color: "#cccccc", fontWeight: "400", fontSize:14, letterSpacing: 2  }}>
-                            Partly Cloudy
-                        </Text>
-                    </View>
-                    {/* other stats */}
+                <View style={{ flexDirection: 'column', marginVertical: 2 }}>
+                    <Text style={{textAlign: "center", fontWeight: "bold", color: "white", fontSize: 60, marginLeft: 15,}}>
+                        23&#176;
+                    </Text>
+                    <Text style={{textAlign: "center", fontWeight: "bold", color: "#cccccc", fontWeight: "400", fontSize:14, letterSpacing: 2  }}>
+                        Partly Cloudy
+                    </Text>
+                </View>
+{/* other stats */}
                     <View style={{flexDirection: "row" ,justifyContent: "space-between", marginHorizontal: 40}}>
                         <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
                                 <Image source={require('../assets/icons/wind.png')} style={{height:18, width
@@ -128,7 +128,6 @@ export default function HomeScreen() {
                                 <Image source={require('../assets/icons/drop.png')} style={{height:18, width
                                 :18}}/>
                                 <Text style={{fontWeight: "500", color: "white"}}> 23%</Text>
-                        
                         </View>
                             <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
                                 <Image source={require('../assets/icons/sun.png')} style={{height:18, width
