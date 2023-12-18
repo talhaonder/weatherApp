@@ -14,7 +14,7 @@ export default function HomeScreen() {
     return (
         <View style={{ flex: 1 }}>
             <StatusBar />
-            <Image blurRadius={50} source={require('../assets/image/bg.png')} style={{ position: 'absolute', height: '100%', width: '100%' }} />
+            <Image blurRadius={70} source={require('../assets/image/bg.png')} style={{ position: 'absolute', height: '100%', width: '100%' }} />
             <SafeAreaView style={{ flex: 1 }}>
                 <View style={{ height: 70, padding: 12 }}>
                     <View style={{
@@ -42,6 +42,8 @@ export default function HomeScreen() {
                     {locations.length > 0 && showSearch ? (
                         <View style={{
                             position: 'absolute',
+                            borderWidth: 1,
+                            borderColor: theme.bgWhite(0.3),
                             width: '100%',
                             backgroundColor: '#ccc',
                             top: 70,
@@ -66,7 +68,55 @@ export default function HomeScreen() {
 
                             ))}
                         </View>
-                    ) : null}
+                    ) : null
+                    }
+                </View>
+                {/* forecast section */}                
+                <View 
+                style={{
+                    display: "flex",
+                    justifyContent: "space-around",
+                    flex: 1,
+                    marginBottom: 10,
+                }}>
+                {/* location */}
+                <Text 
+                style={{
+                    fontSize: 24,
+                    textAlign: "center",
+                    color: "white",
+                    fontWeight: "bold",
+                }}>London,
+                    <Text
+                    style={{
+                        fontSize: 18,
+                        fontWeight: "500",
+                        color: "#cccc"
+                    }}>
+                        United Kingdom
+                    </Text>
+                </Text>
+                {/* weather image */}
+                <View
+                style={{
+                    flexDirection: "row",
+                    justifyContent: "center",
+                }}>
+                    <Image 
+                    source={require('../assets/image/partlycloudy.png')}
+                    style={{
+                        width: 250,
+                        height: 250,
+                    }}/>
+                </View>
+                    <View style={{ flexDirection: 'column', marginVertical: 2 }}>
+                        <Text style={{textAlign: "center", fontWeight: "bold", color: "white", fontSize: 60, marginLeft: 15,}}>
+                            23&#176;
+                        </Text>
+                        <Text style={{textAlign: "center", fontWeight: "bold", color: "#cccccc", fontWeight: "400", fontSize:14, letterSpacing: 2  }}>
+                            Partly Cloudy
+                        </Text>
+                    </View>
                 </View>
             </SafeAreaView>
         </View>
