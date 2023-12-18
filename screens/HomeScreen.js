@@ -117,6 +117,25 @@ export default function HomeScreen() {
                             Partly Cloudy
                         </Text>
                     </View>
+                    {/* other stats */}
+                    <View style={{flexDirection: "row" ,justifyContent: "space-between", marginHorizontal: 40}}>
+                        <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
+                                <Image source={require('../assets/icons/wind.png')} style={{height:18, width
+                                :18}}/>
+                                <Text style={{fontWeight: "500", color: "white"}}> 22km</Text>
+                        </View>
+                        <View style={{display:"flex", justifyContent:"space-between", marginHorizontal: 4, flexDirection: "row", alignItems: "center",  marginHorizontal: 2 }}>
+                                <Image source={require('../assets/icons/drop.png')} style={{height:18, width
+                                :18}}/>
+                                <Text style={{fontWeight: "500", color: "white"}}> 23%</Text>
+                        
+                        </View>
+                            <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
+                                <Image source={require('../assets/icons/sun.png')} style={{height:18, width
+                                :18}}/>
+                                <Text style={{fontWeight: "500", color: "white"}}> 6:05 AM</Text>
+                        </View>
+                    </View>  
                 </View>
             </SafeAreaView>
         </View>
