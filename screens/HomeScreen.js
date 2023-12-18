@@ -4,19 +4,21 @@ import { theme } from "../theme";
 import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon } from "react-native-heroicons/outline";
 import {debounce} from 'lodash';
 import { fetchLocations, fetchWeatherForecast } from "../api/weather";
+import { weatherImages } from "../constants";
 
 export default function HomeScreen() {
     const [showSearch, toggleSearch] = useState(false);
     const [locations, setLocations] = useState([]);
-
+    const [weather, setWeather] = useState({})
     const handleLocation = (loc) => {
         console.log('location: ', loc);
         setLocations([]);
+        toggleSearch(false);
         fetchWeatherForecast({
             cityName: loc.name,
             days: '7'
         }).then(data=>{
-            console.log('got forecast: ',data);
+            setWeather(data);
         })
     }
 
@@ -29,6 +31,8 @@ export default function HomeScreen() {
         }
     }
     const handleTextDebounce = useCallback(debounce(handleSearch,1200), [])
+
+    const {current, location} = weather
 
     return (
         <View style={{ flex: 1 }}>
@@ -108,14 +112,14 @@ export default function HomeScreen() {
                         textAlign: "center",
                         color: "white",
                         fontWeight: "bold",
-                    }}> London,
+                    }}> {location?.name},
                         <Text
                         style={{
                             fontSize: 18,
                             fontWeight: "500",
                             color: "#cccc"
                         }}>
-                        United Kingdom
+                         {" "+location?.country}
                         </Text>
                     </Text>
                 {/* weather image */}
@@ -124,8 +128,10 @@ export default function HomeScreen() {
                         flexDirection: "row",
                         justifyContent: "center",
                     }}>
-                        <Image 
-                        source={require('../assets/image/partlycloudy.png')}
+                        <Image
+                        source={weatherImages[current?.condition.text]}
+                        //source={{uri: 'https:'+current?.condition?.icon}} 
+                        //source={require('../assets/image/partlycloudy.png')}
                         style={{
                             width: 250,
                             height: 250,
@@ -133,10 +139,10 @@ export default function HomeScreen() {
                 </View>
                 <View style={{ flexDirection: 'column', marginVertical: 2 }}>
                     <Text style={{textAlign: "center", fontWeight: "bold", color: "white", fontSize: 60, marginLeft: 15,}}>
-                        23&#176;
+                        {current?.temp_c}&#176;
                     </Text>
                     <Text style={{textAlign: "center", fontWeight: "bold", color: "#cccccc", fontWeight: "400", fontSize:14, letterSpacing: 2  }}>
-                        Partly Cloudy
+                        {current?.condition?.text}
                     </Text>
                 </View>
 {/* other stats */}
@@ -152,7 +158,7 @@ export default function HomeScreen() {
                                 <Text style={{fontWeight: "500", color: "white"}}> 23%</Text>
                         </View>
                             <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
-                                <Image source={require('../assets/icons/sun.png')} style={{height:18, width
+                                <Image source={require('../assets/image/sun.png')} style={{height:18, width
                                 :18}}/>
                                 <Text style={{fontWeight: "500", color: "white"}}> 6:05 AM</Text>
                         </View>
