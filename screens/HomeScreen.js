@@ -150,12 +150,12 @@ export default function HomeScreen() {
                         <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
                                 <Image source={require('../assets/icons/wind.png')} style={{height:18, width
                                 :18}}/>
-                                <Text style={{fontWeight: "500", color: "white"}}> 22km</Text>
+                                <Text style={{fontWeight: "500", color: "white"}}>{current?.wind_kph}</Text>
                         </View>
                         <View style={{display:"flex", justifyContent:"space-between", marginHorizontal: 4, flexDirection: "row", alignItems: "center",  marginHorizontal: 2 }}>
                                 <Image source={require('../assets/icons/drop.png')} style={{height:18, width
                                 :18}}/>
-                                <Text style={{fontWeight: "500", color: "white"}}> 23%</Text>
+                                <Text style={{fontWeight: "500", color: "white"}}> {current?.humidity}</Text>
                         </View>
                             <View style={{display: "flex", alignItems: "center",  marginHorizontal: 2, flexDirection: "row" }}>
                                 <Image source={require('../assets/image/sun.png')} style={{height:18, width
@@ -177,116 +177,32 @@ export default function HomeScreen() {
                     contentContainerStyle={{paddingHorizontal: 15}}
                     showsHorizontalScrollIndicator={false}
                     >
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Monday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Tuesday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Monday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Monday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Monday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            margin: 5,
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: 100,
-                            marginTop: 15,
-                            height: "auto",
-                            borderRadius: 25, // Equivalent to rounded-3xl
-                            paddingVertical: 3, // Equivalent to py-3
-                            backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
-                            marginBottom: 1, 
-                            backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
-                        }}>                            
-                                <Image source={require('../assets/image/heavyrain.png')} style={{height:44, width:44,}}/>
-                                <Text style={{color: "white"}}>Monday</Text>
-                                <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>23&#176;</Text>
-                        </View>
-                        
-
+                        {
+                            weather?.forecast?.forecastday?.map((item, index)=>{
+                                return (
+                                    <View
+                                     key={index}
+                                     style={{
+                                        flex: 1,
+                                        margin: 5,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        width: 100,
+                                        marginTop: 15,
+                                        height: "auto",
+                                        borderRadius: 25, // Equivalent to rounded-3xl
+                                        paddingVertical: 3, // Equivalent to py-3
+                                        backgroundColor: 'yourBackgroundColor', // Replace with the desired background color
+                                        marginBottom: 1, 
+                                        backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
+                                    }}>                            
+                                            <Image source={weatherImages[item?.day?.condition?.text]} style={{height:44, width:44,}}/>
+                                            <Text style={{color: "white"}}>{item.date}</Text>
+                                            <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>{item?.day?.avgtemp_c}&#176;</Text>
+                                    </View>
+                                )
+                            })
+                        }
                     </ScrollView>
                 </View>                    
             </SafeAreaView>
