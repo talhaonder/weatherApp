@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { View, Text, SafeAreaView, StatusBar, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { theme } from "../theme";
 import { CalendarDaysIcon, MagnifyingGlassIcon, MapPinIcon } from "react-native-heroicons/outline";
@@ -29,6 +29,19 @@ export default function HomeScreen() {
                 setLocations(data);
             })
         }
+    }
+
+    useEffect(()=>{
+        fetchMyWeatherData();
+    },[]);
+
+    const fetchMyWeatherData = async ()=>{
+        fetchWeatherForecast({
+            cityName: 'Ankara',
+            days:'7'
+        }).then(data=>{
+            setWeather(data);
+        })
     }
     const handleTextDebounce = useCallback(debounce(handleSearch,1200), [])
 
@@ -129,7 +142,7 @@ export default function HomeScreen() {
                         justifyContent: "center",
                     }}>
                         <Image
-                        source={weatherImages[current?.condition.text]}
+                        source={weatherImages[current?.condition.text]  || require('../assets/image/sun.png')}
                         //source={{uri: 'https:'+current?.condition?.icon}} 
                         //source={require('../assets/image/partlycloudy.png')}
                         style={{
