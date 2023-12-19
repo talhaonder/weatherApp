@@ -213,7 +213,7 @@ export default function HomeScreen() {
                                         marginBottom: 1, 
                                         backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
                                     }}>                            
-                                            <Image source={weatherImages[item?.day?.condition?.text]} style={{height:44, width:44,}}/>
+                                            <Image source={weatherImages[item?.day?.condition?.text] || require('../assets/image/sun.png')} style={{height:44, width:44,}}/>
                                             <Text style={{color: "white", fontSize: 12, fontWeight: '300' }}>{dayName}</Text>
                                             <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>{item?.day?.avgtemp_c}&#176;</Text>
                                     </View>
