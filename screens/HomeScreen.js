@@ -179,6 +179,10 @@ export default function HomeScreen() {
                     >
                         {
                             weather?.forecast?.forecastday?.map((item, index)=>{
+                                let date = new Date(item.date);
+                                let options = {weekday: 'long'};
+                                let dayName = date.toLocaleDateString('en-US', options);
+                                dayName = dayName.split(',')[0]
                                 return (
                                     <View
                                      key={index}
@@ -197,7 +201,7 @@ export default function HomeScreen() {
                                         backgroundColor: theme.bgWhite(0.15)// Equivalent to space-y-1
                                     }}>                            
                                             <Image source={weatherImages[item?.day?.condition?.text]} style={{height:44, width:44,}}/>
-                                            <Text style={{color: "white"}}>{item.date}</Text>
+                                            <Text style={{color: "white", fontSize: 12, fontWeight: '300' }}>{dayName}</Text>
                                             <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>{item?.day?.avgtemp_c}&#176;</Text>
                                     </View>
                                 )
