@@ -2,10 +2,10 @@ About this project
 October 2023 - December 2023
 Stay updated with the latest weather forecasts and trends! tWeather is a comprehensive and user-friendly mobile application designed to provide real-time weather updates, future weather predictions, and detailed weather information for locations around the globe. With tWeather, you can:
 
-Preview
+## Preview
 
-![HomeScreen](https://github.com/user-attachments/assets/2ebd574a-d76c-4fd0-8bd1-7300b15c0c85)
-![Location Screen](https://github.com/user-attachments/assets/b44cb7bb-b30d-41bd-b3d1-0ed4012a94fa)
+<img src="https://github.com/user-attachments/assets/2ebd574a-d76c-4fd0-8bd1-7300b15c0c85" alt="HomeScreen" width="300"/>
+<img src="https://github.com/user-attachments/assets/b44cb7bb-b30d-41bd-b3d1-0ed4012a94fa" alt="Location Screen" width="300"/>
 
 TR
 
@@ -28,3 +28,12 @@ Learn about future weather forecasts.
 Automatically view your current location on the map.
 Save and review your past weather searches.
 Ideal for anyone looking to access weather information quickly and reliably. The app is designed to make it easy for users to access weather data and stay informed about upcoming weather trends.
+
+
+SETUP 
+
+\ open terminal
+\ git clone https://github.com/talhaonder/weatherApp.git
+\ cd weatherApp
+\ npm install
+\ expo start
