@@ -39,3 +39,16 @@ Ideal for anyone looking to access weather information quickly and reliably. The
 5. expo start
 
 
+
+
+
+
+
+
+
+## CR.
+
+https://www.youtube.com/watch?v=953vyZMO4cM
+
+I took this design as a model and added different functionalities to the working system and designed a more user-friendly application.
+It is not the same application, only the design was inspired and I made a better version :)
