@@ -28,10 +28,14 @@ Save and review your past weather searches.
 Ideal for anyone looking to access weather information quickly and reliably. The app is designed to make it easy for users to access weather data and stay informed about upcoming weather trends.
 
 
-## SETUP 
+## Setup
 
-\ open terminal
-\ git clone https://github.com/talhaonder/weatherApp.git
-\ cd weatherApp
-\ npm install
-\ expo start
+1. Open a terminal.
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/talhaonder/weatherApp.git
+3. cd weatherApp
+4. npm install
+5. expo start
+
+
